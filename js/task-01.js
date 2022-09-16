@@ -4,4 +4,4 @@ const categoriesArrTotal = categoriesArr.length; // определяем дли�
 console.log(`Number of categories: ${categoriesArrTotal}`); // выводим сообщение с числом элементов
 
 console.log(`>> Task 2`); // задание №2
-console.log(categoriesArr[0].§)
+console.log(categoriesArr[0].
