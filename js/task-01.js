@@ -1,14 +1,7 @@
-const allItems = document.querySelectorAll(".item");
-const allItemsQuantity = allItems.length;
+console.log(`>> Task 1`); // задание №1
+const categoriesArr = document.querySelectorAll('.item'); // создаём массив указанных элементов
+const categoriesArrTotal = categoriesArr.length; // определяем длину массива - количество указанных элементов
+console.log(`Number of categories: ${categoriesArrTotal}`); // выводим сообщение с числом элементов
 
-console.log(`Number of categories: ${allItemsQuantity}`);
-
-allItems.forEach((element) => {
-  let elementTitle = element.querySelector("h2").textContent;
-
-  let oneTitleElements = element.querySelectorAll("li");
-  let oneTitleElemntsQuantity = oneTitleElements.length;
-
-  console.log(`Category: ${elementTitle}`);
-  console.log(`Elements: ${oneTitleElemntsQuantity}`);
-});
+console.log(`>> Task 2`); // задание №2
+console.log(categoriesArr[0].§)
