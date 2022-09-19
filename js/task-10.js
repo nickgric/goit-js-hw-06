@@ -7,35 +7,38 @@ const create = document.querySelector("[data-create]");
 const destroy = document.querySelector("[data-destroy]");
 const boxes = document.querySelector("#boxes");
 
-let amount = 0;
 let elements = [];
 
 const inputAmount = () => {
-  console.log(`Количество элементов: ${amount}`);
+  console.log(`Количество элементов: ${input.value}`);
 }
 
 const createBoxes = () => {
-  if(input.value == '' || input.value > 25) {
-    window.alert(`Введите число элементов (от 1 до 25)`);
+  if(+input.value === 0 || +input.value > 100) {
+    window.alert(`Введите число элементов (от 1 до 100)`);
   }
-
-  amount = 0;
+  boxes.innerHTML = '';
   elements = [];
-  amount = input.value;
+  console.log(`Создаём ${input.value} элементов`);
 
-  console.log(`Создаём ${amount} элементов`);
+  let width = 30;
+  let height = 30;
 
-  for(let i = 0; i < amount; i += 1) {
-    const element = `<div>11</div>`;
+  for(let i = 0; i < +input.value; i += 1) {
+    const element = document.createElement('div');
+    element.style.width = `${width}px`;
+    element.style.height = `${height}px`;
+    element.style.backgroundColor = getRandomHexColor();
     elements.push(element);
-    boxes.innerHTML = '';
-    boxes.insertAdjacentHTML("afterbegin", elements.join(''));
+    width += 10;
+    height += 10;
   }
+  
+  boxes.append(...elements);
 }
 
 const destroyBoxes = () => {
   console.log(`Удаляем все элементы`);
-  amount = 0
   elements = [];
   boxes.innerHTML = '';
 }
